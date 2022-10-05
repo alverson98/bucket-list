@@ -29,15 +29,16 @@ function Bucket(props) {
     // Hint: use a ternary operator
     <div className={ } key={}>
 
-      // TODO: Add an onClick event that invokes the `completeBucketItem` method passing the item id as a argument
-      <div key={} onClick={}>
+      {/* TODO: Add an onClick event that invokes the `completeBucketItem` method passing the item id as a argument */}
+      <div key={index} onClick={ () => { props.completeBucketItem(item.id)}}>
           {/* TODO: Add the item text here */}
+          {item.text}
       </div>
       <div className="icons">
-        // TODO: Add an onClick event update the `edit` object with the `id`, `value`, and `eagerness` properties
-        <p onClick={}> ✏️</p>
+        {/* TODO: Add an onClick event update the `edit` object with the `id`, `value`, and `eagerness` properties */}
+        <p onClick={() => {submitUpdate(item)}}> ✏️</p>
         {/* TODO: Add an onClick event that will invoke the removeBucketItem method passing in the `item.id` */}
-        <p onClick={}> 🗑️</p>
+        <p onClick={ () => {props.removeBucketListItem(item.id)}}> 🗑️</p>
       </div>
     </div>
   ));
